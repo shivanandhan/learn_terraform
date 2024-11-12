@@ -1,5 +1,4 @@
-resource "aws_instance" "frontend"
-{
+resource "aws_instance" "frontend" {
   ami           = "ami-09c813fb71547fc4f"
   instance_type = "t3.small"
   vpc_security_group_ids = ["sg-0c6e17b6efba619a0"]
@@ -16,8 +15,7 @@ resource "aws_route53_record" "frontend" {
   records = [aws_instance.frontend.private_ip]
 }
 
-resource "aws_instance" "mongodb"
-{
+resource "aws_instance" "mongodb" {
   ami           = "ami-09c813fb71547fc4f"
   instance_type = "t3.small"
   vpc_security_group_ids = ["sg-0c6e17b6efba619a0"]
@@ -34,8 +32,7 @@ resource "aws_route53_record" "mongodb" {
   records = [aws_instance.mongodb.private_ip]
 }
 
-resource "aws_instance" "catalogue"
-{
+resource "aws_instance" "catalogue" {
   ami           = "ami-09c813fb71547fc4f"
   instance_type = "t3.small"
   vpc_security_group_ids = ["sg-0c6e17b6efba619a0"]
