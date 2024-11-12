@@ -1,5 +1,4 @@
-variable "fruits"
-{
+variable "fruits" {
   default = {
     apple =  {}
     banana = {}
