@@ -17,6 +17,7 @@ resource "aws_instance" "instance" {
 }
 
 resource "aws_route53_record" "record" {
+  count = length(var.instances)
   zone_id = "Z01735512UFOFLO7B90DS"
   name    = "${var.instances[count.index]}-dev.kndevops72.online"
   type    = "A"
