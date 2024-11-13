@@ -3,7 +3,7 @@ resource "aws_route53_record" "record" {
   name    = "${var.instance_name}-dev.kndevops72.online"
   type    = "A"
   ttl     = "30"
-  records = var.ip_address.private_ip
+  records = [var.ip_address]
 }
 
 variable "instance_name"{}
